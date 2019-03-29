@@ -1,0 +1,14 @@
+.list {
+  background-color: #fff;
+  position: relative;
+  text-align: left;
+  &::after {
+    content: " ";
+    display: table;
+    clear: both;
+  }
+}
+.feature {
+  float: left;
+  width: 25%;
+}

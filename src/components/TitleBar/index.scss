@@ -1,0 +1,24 @@
+.bar {
+  width: 100%;
+  color: #727e90;
+  &:after {
+    content: " ";
+    display: table;
+    clear: both;
+  }
+}
+
+.title {
+  font-size: 20px;
+  float: left;
+  vertical-align: bottom;
+  font-weight: 700;
+  margin: 0 10px 0 0;
+  position: relative;
+  top:-2px;
+}
+
+.more {
+  float: right;
+  color: #727e90;
+}

@@ -1,0 +1,91 @@
+@import "../default.scss";
+
+.wrap {
+    height: 40px;
+    line-height: 40px;
+    width: 100%;
+    background-color: #191919;
+    color: #ddd;
+    font-size: 13px;
+}
+
+.container {
+    width: $client-width;
+    margin: 0 auto;
+
+    &::after {
+        clear: both;
+        content: " ";
+        display: table;
+    }
+}
+
+.contactus {
+    float: left;
+}
+
+.sup-nav {
+    float: right;
+
+    ul {
+        margin: 0;
+        list-style: none;
+    }
+
+    li {
+        margin-left: 25px;
+        float: left;
+    }
+}
+
+.navItem {
+    color: #ddd;
+    text-decoration: none;
+}
+
+.download {
+    position: relative;
+
+    .qrContainer {
+        display: none;
+        position: absolute;
+        top: 40px;
+        left: 50%;
+        margin-left: -125px;
+        width: 250px;
+        height: 520px;
+        text-align: center;
+        background-color: #fff;
+        border: 1px solid #ddd;
+    }
+
+    &:hover {
+        .qrContainer {
+            display: block;
+        }
+    }
+
+    img {
+        &:first-of-type {
+            margin: 65px 0 0;
+        }
+    }
+
+    h3 {
+        color: #303030;
+        font-size: 16px;
+        margin-top: 17px;
+    }
+
+    .qrcode {
+        margin-top: 17px;
+    }
+
+    p {
+        margin-top: 24px;
+        font-size: 13px;
+        color: #999;
+        width: 100%;
+        letter-spacing: 5px;
+    }
+}

@@ -1,0 +1,42 @@
+.wrap {
+  position: relative;
+  padding: 45px 0 45px 120px;
+  &:hover {
+    .img {
+      visibility: hidden;
+      top: 38px;
+    }
+    .hoverImg {
+      visibility: visible;
+      top: 38px;
+    }
+  }
+}
+
+.img,
+.hoverImg {
+  position: absolute;
+  left: 50px;
+  top: 41px;
+  height: 60px;
+  width: 60px;
+  transition: top 0.2s ease;
+  background-size: contain;
+}
+.img {
+  visibility: visible;
+}
+.hoverImg {
+  visibility: hidden;
+}
+
+.title {
+  font-size: 20px;
+  color: #29374b;
+  margin: 0;
+}
+.desc {
+  font-size: 14px;
+  color: #727e90;
+  margin-top: 10px;
+}
