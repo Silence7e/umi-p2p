@@ -1,0 +1,12 @@
+.wrap {
+  margin-top: 40px;
+  &:after {
+    content: " ";
+    display: table;
+    clear: both;
+  }
+}
+
+.listWrap {
+  margin-top: 20px;
+}

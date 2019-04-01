@@ -5,6 +5,8 @@ export interface BannerItem {
 
 export interface HomeState {
   banners: BannerItem[];
+  mars: any[];
+  venus: any[];
 }
 
 export interface FeatureItem {

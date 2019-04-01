@@ -6,6 +6,7 @@ import { features } from '../../data/home';
 import Notification from './components/Notifications';
 import Feature from './components/Feature';
 import VenusList from './components/VenusList';
+import MarsList from './components/MarsList';
 import { ListParams } from '../../interfaces/list';
 import { State } from '../../interfaces/model';
 
@@ -15,7 +16,9 @@ interface Props {
   getBanners: () => null;
   getNotifications: () => null;
   fetchVenus: () => null;
+  fetchMars: () => null;
   venus: any[];
+  mars: any[];
 }
 
 class Home extends Component<Props, {}> {
@@ -24,9 +27,10 @@ class Home extends Component<Props, {}> {
     this.props.getBanners();
     this.props.getNotifications();
     this.props.fetchVenus();
+    this.props.fetchMars();
   }
   render() {
-    const { banners = [], notification, venus } = this.props;
+    const { banners = [], notification, venus, mars } = this.props;
     const content = banners.map((item: any) => {
       const data = { backgroundImage: `url(${item.src})`, height: '100%' };
       return (
@@ -43,6 +47,7 @@ class Home extends Component<Props, {}> {
         <Notification content={notification && notification.content} />
         <Feature data={features} />
         <VenusList data={venus} />
+        <MarsList data={mars} />
         <div>ss</div>
         <div>ss</div>
         <div>ss</div>
@@ -57,7 +62,8 @@ class Home extends Component<Props, {}> {
 const mapPropsToState = (state: State) => {
   return {
     banners: state.home.banners,
-    venus: state.venus.list.slice(0, 2),
+    venus: state.home.venus,
+    mars: state.home.mars,
     notification: state.notification.data && state.notification.data[0],
   };
 };
@@ -79,7 +85,17 @@ const mapDispatchToProps = (dispatch: any) => {
     },
     fetchVenus: ({ offset, size, total }: ListParams = {}) => {
       dispatch({
-        type: 'venus/fetchVenus',
+        type: 'home/fetchVenus',
+        payload: {
+          offset,
+          size,
+          total,
+        },
+      });
+    },
+    fetchMars: ({ offset, size, total }: ListParams = {}) => {
+      dispatch({
+        type: 'home/fetchMars',
         payload: {
           offset,
           size,
@@ -93,4 +109,3 @@ export default connect(
   mapPropsToState,
   mapDispatchToProps
 )(Home);
-
