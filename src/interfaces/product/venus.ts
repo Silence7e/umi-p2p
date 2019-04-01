@@ -1,15 +1,17 @@
-export interface VanusProduct {
+export interface VenusProduct {
   id: number;
   title: string;
   desc: string;
-  rate: number | string;
+  rate: number;
   time: number | string;
   status: string;
+  statusDesc: string;
+  link: string;
   icon?: any;
 }
 
-export interface VanusState {
-  list: VanusProduct[];
+export interface VenusState {
+  list: VenusProduct[];
   offset: number;
   size: number;
 }

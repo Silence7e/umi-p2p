@@ -1,1 +1,1 @@
-export { VanusProduct } from './vanus';
+export { VenusProduct } from './venus';

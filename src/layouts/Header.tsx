@@ -20,7 +20,7 @@ export default () => {
               <Link to="/">首页</Link>
             </li>
             <li>
-              <Link to="/vanus">轻松投</Link>
+              <Link to="/venus">轻松投</Link>
             </li>
             <li>
               <Link to="/project">自选投</Link>

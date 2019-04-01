@@ -1,0 +1,14 @@
+@import '../../../../default.scss';
+
+.venus {
+  margin-top: 50px;
+}
+
+.listWrap {
+  margin-top: 20px;
+}
+
+.list {
+  width: calc(#{$client-width} + 34px);
+  margin-left: -34px;
+}

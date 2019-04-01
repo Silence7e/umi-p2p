@@ -1,8 +1,8 @@
 import { DvaModel, ReduxAction, ReduxSagaEffects } from '../interfaces/index';
-import service from '../services/vanus';
-const NAMESPACE = 'vanus';
+import service from '../services/venus';
+const NAMESPACE = 'venus';
 
-const vanus: DvaModel<any> = {
+const venus: DvaModel<any> = {
   namespace: NAMESPACE,
   state: {
     list: [],
@@ -10,7 +10,7 @@ const vanus: DvaModel<any> = {
     size: 10,
   },
   reducers: {
-    getVanus(state, { payload }: ReduxAction) {
+    getVenus(state, { payload }: ReduxAction) {
       const { list, offset, size } = payload;
       return {
         ...state,
@@ -21,11 +21,11 @@ const vanus: DvaModel<any> = {
     },
   },
   effects: {
-    *fetchVanus(action: ReduxAction, { call, put }: ReduxSagaEffects) {
-      const { offset, size, total = true } = action.payload;
-      const data = yield call(service.getVanusList, { offset, size, total });
+    *fetchVenus(action: ReduxAction, { call, put }: ReduxSagaEffects) {
+      const { offset, size=10, total = true } = action.payload;
+      const data = yield call(service.getVenusList, { offset, size, total });
       yield put({
-        type: `${NAMESPACE}/getVanus`,
+        type: `getVenus`,
         payload: {
           list: data.list,
           size: data.size,
@@ -36,4 +36,4 @@ const vanus: DvaModel<any> = {
   },
 };
 
-export default vanus;
+export default venus;

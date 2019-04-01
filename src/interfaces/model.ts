@@ -1,9 +1,9 @@
 import { HomeState } from './home';
-import { VanusState } from './product/vanus';
+import { VenusState } from './product/venus';
 import { NotificationState } from './notification';
 
 export interface State {
   home: HomeState;
-  vanus: VanusState;
+  venus: VenusState;
   notification: NotificationState;
 }

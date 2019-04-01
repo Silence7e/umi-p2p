@@ -5,7 +5,7 @@ import styles from './index.scss';
 import { features } from '../../data/home';
 import Notification from './components/Notifications';
 import Feature from './components/Feature';
-import Vanus from './components/Vanus';
+import VenusList from './components/VenusList';
 import { ListParams } from '../../interfaces/list';
 import { State } from '../../interfaces/model';
 
@@ -14,7 +14,8 @@ interface Props {
   notification: any;
   getBanners: () => null;
   getNotifications: () => null;
-  fetchVanus: () => null;
+  fetchVenus: () => null;
+  venus: any[];
 }
 
 class Home extends Component<Props, {}> {
@@ -22,10 +23,10 @@ class Home extends Component<Props, {}> {
     super(props);
     this.props.getBanners();
     this.props.getNotifications();
-    this.props.fetchVanus();
+    this.props.fetchVenus();
   }
   render() {
-    const { banners = [], notification } = this.props;
+    const { banners = [], notification, venus } = this.props;
     const content = banners.map((item: any) => {
       const data = { backgroundImage: `url(${item.src})`, height: '100%' };
       return (
@@ -36,12 +37,18 @@ class Home extends Component<Props, {}> {
     });
     return (
       <Fragment>
-        <div className="container">
+        <div className="container" style={{ overflow: 'hidden', maxHeight: '320px' }}>
           <Carousel autoplay={true}>{content}</Carousel>
         </div>
         <Notification content={notification && notification.content} />
         <Feature data={features} />
-        <Vanus />
+        <VenusList data={venus} />
+        <div>ss</div>
+        <div>ss</div>
+        <div>ss</div>
+        <div>ss</div>
+        <div>ss</div>
+        <div>ss</div>
       </Fragment>
     );
   }
@@ -50,7 +57,7 @@ class Home extends Component<Props, {}> {
 const mapPropsToState = (state: State) => {
   return {
     banners: state.home.banners,
-    vanus: state.vanus.list.slice(0, 2),
+    venus: state.venus.list.slice(0, 2),
     notification: state.notification.data && state.notification.data[0],
   };
 };
@@ -70,9 +77,9 @@ const mapDispatchToProps = (dispatch: any) => {
         payload: {},
       });
     },
-    fetchVanus: ({ offset = 0, size = 0, total }: ListParams = {}) => {
+    fetchVenus: ({ offset, size, total }: ListParams = {}) => {
       dispatch({
-        type: 'vanus/fetchVanus',
+        type: 'venus/fetchVenus',
         payload: {
           offset,
           size,
@@ -82,8 +89,8 @@ const mapDispatchToProps = (dispatch: any) => {
     },
   };
 };
-
 export default connect(
   mapPropsToState,
   mapDispatchToProps
 )(Home);
+
