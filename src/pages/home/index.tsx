@@ -48,12 +48,6 @@ class Home extends Component<Props, {}> {
         <Feature data={features} />
         <VenusList data={venus} />
         <MarsList data={mars} />
-        <div>ss</div>
-        <div>ss</div>
-        <div>ss</div>
-        <div>ss</div>
-        <div>ss</div>
-        <div>ss</div>
       </Fragment>
     );
   }

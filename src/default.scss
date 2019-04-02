@@ -7,3 +7,11 @@
 @fill-mask: rgba(0, 0, 0, 0.4);
 */
 $client-width: 1140px;
+
+@mixin clearFix() {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}

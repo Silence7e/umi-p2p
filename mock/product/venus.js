@@ -18,10 +18,18 @@ export default {
             timeUnit: 'M',
             title: '@name @time 个月 @date - @order',
             type: 'venus',
-            'rate|0-0.1-2': 1,
+            rate: '@float(0, 0, 1, 3)',
             'novice|1-1': true,
-            status: 'investing',
-            statusDesc: '可加入',
+            'status|1': [
+              {
+                value: 'investing',
+                desc: '可加入',
+              },
+              {
+                value: 'finished',
+                desc: '已完成',
+              },
+            ],
           },
         ],
         offset: Number(offset),

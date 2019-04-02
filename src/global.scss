@@ -3,10 +3,10 @@
 @font-face {
   font-family: Montserrat;
   src: url(./assets/fonts/Montserrat-Light.woff);
-  src: url(./assets/fonts/Montserrat-Light.woff) format('embedded-opentype'),
-  url(./assets/fonts/Montserrat-Light.woff) format('woff');
+  src: url(./assets/fonts/Montserrat-Light.woff) format("embedded-opentype"),
+    url(./assets/fonts/Montserrat-Light.woff) format("woff");
   font-weight: 400;
-  font-style: normal
+  font-style: normal;
 }
 
 html,
@@ -18,6 +18,9 @@ html,
 body {
   -webkit-font-smoothing: antialiased;
 }
+html {
+  height: 100%;
+}
 body {
   font-family: Montserrat, "Microsoft YaHei", "Heiti SC", simhei, "Lucida Sans Unicode", "Myriad Pro",
     "Hiragino Sans GB", Verdana !important;
@@ -27,6 +30,7 @@ body {
   background-color: #f5f7fa !important;
   min-width: $client-width;
   line-height: 1.428571429 !important;
+  min-height: 100%;
 }
 
 html.v_scrollbar {

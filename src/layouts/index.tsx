@@ -1,6 +1,7 @@
 import React from 'react';
 import SubHeader from './SubHeader';
 import Header from './Header';
+import Footer from './Footer';
 
 const BasicLayout: React.FC = props => {
   return (
@@ -8,6 +9,7 @@ const BasicLayout: React.FC = props => {
       <SubHeader />
       <Header />
       {props.children}
+      <Footer />
     </div>
   );
 };

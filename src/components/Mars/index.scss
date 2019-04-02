@@ -17,6 +17,9 @@
     box-shadow: 0 10px 20px #d3d9e0;
     top: -3px;
   }
+  span {
+    color: #666;
+  }
 }
 .title {
   color: #274161;
@@ -65,8 +68,10 @@
 .percent {
   color: #666;
 }
-.decimal {
+.decimalWrap {
   float: right;
+}
+.decimal {
   color: #666;
 }
 
@@ -105,4 +110,60 @@
 .featureDeac {
   font-size: 13px;
   color: #727e90;
+}
+.finishedMask {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  visibility: hidden;
+  opacity: 0;
+}
+.maskText {
+  text-align: center;
+  width: 120px;
+  height: 120px;
+  padding-top: 40px;
+  font-size: 20px;
+  border-radius: 50%;
+  background-color: #000;
+  position: absolute;
+  color: #fff;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  visibility: hidden;
+  opacity: 0.6;
+  span {
+    color: #fff;
+    display: block;
+    font-size: 13px;
+  }
+}
+
+.wrap.finished {
+  border-top: 2px solid #93a0b0;
+  color: #93a0b0;
+  box-shadow: none;
+  .process {
+    visibility: hidden;
+  }
+  .featureValue {
+    color: #93a0b0;
+  }
+  &:hover {
+    top: 0;
+    .finishedMask {
+      visibility: visible;
+      opacity: 0.6;
+    }
+    .maskText {
+      visibility: visible;
+      opacity: 0.5;
+    }
+  }
 }

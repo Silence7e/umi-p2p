@@ -54,10 +54,10 @@
   text-align: center;
 }
 .rate,
-.time{
+.time {
   position: relative;
-  &:after{
-    content:' ';
+  &:after {
+    content: " ";
     position: absolute;
     right: 0;
     top: 10px;
@@ -144,4 +144,23 @@
 .shadowTipInfo {
   font-size: 13px;
   margin-top: 8px;
+}
+
+.venus.finished {
+  &:before {
+    background: #93a0b0;
+  }
+  &:hover {
+    box-shadow: none;
+    top: 0;
+    .shadow {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+  .profile,
+  .timeLimit,
+  .statusNum {
+    color: #93a0b0;
+  }
 }

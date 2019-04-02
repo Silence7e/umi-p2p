@@ -1,4 +1,5 @@
 import { FeatureItem } from '../interfaces/home';
+import company from './company';
 const address = 'https://www.jimu.com';
 const features: FeatureItem[] = [
   {
@@ -29,24 +30,68 @@ const features: FeatureItem[] = [
     title: '资金安全',
     desc: '民生银行资金存管',
   },
-  // {
-  //   img: '',
-  //   hoverImg: '',
-  //   title: '',
-  //   desc: '',
-  // },
-  // {
-  //   img: '',
-  //   hoverImg: '',
-  //   title: '',
-  //   desc: '',
-  // },
-  // {
-  //   img: '',
-  //   hoverImg: '',
-  //   title: '',
-  //   desc: '',
-  // },
 ];
 
-export { features };
+const footerLinks = [
+  {
+    title: '关于积木',
+    list: [
+      { content: '公司简介' },
+      { content: '组织信息' },
+      { content: '重大事项' },
+      { content: '媒体报道' },
+      { content: '法律声明' },
+    ],
+  },
+  {
+    title: '安全保障',
+    list: [
+      { content: '合规运营' },
+      { content: '资金存管' },
+      { content: '风险控制' },
+      { content: '信息安全' },
+    ],
+  },
+  {
+    title: '信息披露',
+    list: [
+      { content: '运营数据' },
+      { content: '审计信息' },
+      { content: '备案信息' },
+      { content: '还款公告' },
+    ],
+  },
+  {
+    title: '自助服务',
+    list: [{ content: '帮助中心' }, { content: '收益计算器' }, { content: '收费标准' }],
+  },
+];
+
+const contactInfos = [
+  {
+    icon: 'phone',
+    value: company.hotline,
+    desc: '客服电话',
+  },
+  {
+    icon: 'mail',
+    value: company.kefuEmail,
+    desc: '客服邮箱',
+  },
+  {
+    icon: 'clock-circle',
+    value: company.serviceTime,
+    desc: '服务时间',
+  },
+  {
+    icon: 'solution',
+    value: company.complain,
+    desc: '投诉电话',
+  },
+  {
+    icon: 'solution',
+    value: company.complainEmail,
+    desc: '投诉邮箱',
+  },
+];
+export { features, footerLinks, contactInfos };
